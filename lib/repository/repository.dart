@@ -6,10 +6,17 @@ class UserRepository {
       "563492ad6f917000010000014e4c2d1ca31c4dc885a5369653c6f6b4";
   static String mainUrl = "https://api.pexels.com";
   final Dio _dio = Dio();
-  var getFeed = '$mainUrl/videos/popular';
+  var getFeed = '$mainUrl/videos/search';
 
   Future<FeedResponse> getFeeds() async {
-    var params = {"api_key": apiKey, "language": "en-US", "page": 1};
+    var params = {
+      "api_key": apiKey,
+      "language": "en-US",
+      "query": "dancing",
+      "page": 1,
+      "size": "small",
+      "orientation ": "portrait"
+    };
     try {
       _dio.interceptors
           .add(InterceptorsWrapper(onRequest: (options, handler) async {

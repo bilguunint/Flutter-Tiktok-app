@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:tiktok/bloc/feed_bloc.dart';
 import 'package:tiktok/elements/error_element.dart';
 import 'package:tiktok/elements/loader.dart';
@@ -77,12 +78,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Row(
                         children: [
+                          Container(
+                            height: 40.0,
+                            width: 40.0,
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 1.0, color: Colors.white),
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: NetworkImage(feeds[index].image),
+                                    fit: BoxFit.cover)),
+                          ),
+                          const SizedBox(
+                            width: 5.0,
+                          ),
                           Text(
-                            "@" + feeds[index].user.name,
+                            feeds[index].user.name,
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0,
-                                color: Colors.white),
+                                fontSize: 16.0, color: Colors.white),
                           ),
                           const SizedBox(
                             width: 5.0,
@@ -104,38 +117,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     bottom: 50.0,
                     child: Column(
                       children: [
-                        Container(
-                          height: 40.0,
-                          width: 40.0,
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(width: 1.0, color: Colors.white),
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: NetworkImage(feeds[index].image),
-                                  fit: BoxFit.cover)),
-                        ),
                         const SizedBox(
                           height: 20.0,
                         ),
                         IconButton(
                             onPressed: () {},
-                            icon: const Icon(EvaIcons.heart,
+                            icon: const Icon(Ionicons.heart_outline,
                                 size: 35.0, color: Colors.white)),
                         const SizedBox(
                           height: 10.0,
                         ),
                         IconButton(
                             onPressed: () {},
-                            icon: const Icon(EvaIcons.messageCircle,
-                                size: 35.0, color: Colors.white)),
+                            icon: const Icon(Ionicons.chatbubble_outline,
+                                size: 30.0, color: Colors.white)),
                         const SizedBox(
                           height: 10.0,
                         ),
                         IconButton(
                             onPressed: () {},
-                            icon: const Icon(EvaIcons.undo,
-                                size: 35.0, color: Colors.white))
+                            icon: const Icon(Ionicons.paper_plane_outline,
+                                size: 30.0, color: Colors.white))
                       ],
                     ))
               ],

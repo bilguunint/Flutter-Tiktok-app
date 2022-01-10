@@ -66,7 +66,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/img/
     - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
@@ -85,6 +84,14 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+
+    - family: NunitoBold
+      fonts:
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

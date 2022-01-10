@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tiktok/style/theme.dart' as style;
 
 import 'main_screen/main_screen.dart';
@@ -20,19 +18,6 @@ class MyApp extends StatelessWidget {
           primaryTextTheme: ThemeData.dark().textTheme.apply(
                 fontFamily: 'Nunito',
               ),
-          appBarTheme: AppBarTheme(
-            backgroundColor: style.Colors.scaffoldDarkBack,
-            titleTextStyle:
-                const TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),
-            systemOverlayStyle: const SystemUiOverlayStyle(
-                statusBarBrightness: Brightness.dark,
-                statusBarColor: Colors.white),
-          ),
-          buttonTheme: const ButtonThemeData(buttonColor: Colors.white),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-              style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.black),
-          )),
           scaffoldBackgroundColor: style.Colors.scaffoldDarkBack,
           primaryColorBrightness: Brightness.dark,
           splashColor: Colors.black.withOpacity(0.0),
@@ -45,7 +30,7 @@ class MyApp extends StatelessWidget {
           dividerColor: Colors.white54,
           iconTheme: const IconThemeData(color: Colors.white),
           primaryIconTheme: const IconThemeData(color: Colors.black87)),
-      home: MainScreen(),
+      home: const MainScreen(),
     );
   }
 }
